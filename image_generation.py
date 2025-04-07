@@ -1,5 +1,5 @@
 import streamlit as st
-from google.genai import types
+import google.generativeai as genai
 import io
 import base64
 from PIL import Image
@@ -22,7 +22,7 @@ def generate_image(prompt, client):
         response = client.models.generate_content(
             model=MODEL_ID,
             contents=prompt,
-            config=types.GenerateContentConfig(
+            config=genai.types.GenerateContentConfig(
                 response_modalities=['Text', 'Image']
             )
         )

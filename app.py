@@ -1,5 +1,5 @@
 import streamlit as st
-from google import genai
+import google.generativeai as genai
 import io
 from PIL import Image
 from datetime import datetime
